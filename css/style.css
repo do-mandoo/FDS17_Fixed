@@ -7,12 +7,19 @@ html{
   font-size: 10px;
 }
 body{
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   color:#181818;
   background-color: #fff;
   font-family: 'Spoqa Han Sans';
   font-weight: 700;
 }
+/* 링크 스타일 */
+a{
+  text-decoration: none;
+  color: inherit;
+  /* 상속이라는 뜻. 부모의 컬러를 쓸꺼라는 뜻. */
+}
+
 /* 레이아웃 */
 .container{
   background-color: #ccc;
@@ -24,8 +31,53 @@ body{
   width: 940px;
 
 }
+
+/* 헤더 */
 .header{
-  background-color: yellow;
+  background-color: #FFF;
+  border-radius: 0 0 15px 15px;
+  /* 레프트탑(left-top)값 중심으로 시계방향으로 흐름. */
+  padding: 0 30px 0 30px;
+  position: relative;
+  /* offset조절가능. relative는 주어진값으로 그대로 읽는다. */
+}
+
+/* 로고 */
+.logo{
+  position: absolute;
+  top: 45px;
+  left: 65px;
+}
+
+/* 멤버링크 */
+.member{
+  
+  list-style: none;
+  padding-left: 0;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  margin-right: -8px;
+  font-size: 0;
+ text-align: right; 
+}
+.member li, a{
+  display: inline-block;
+}
+.member li{
+  font-size: 1.4rem;
+  /* text-transform: uppercase;
+  전부 대문자로 만들어줌. */
+}
+.member [aria-hidden]{
+  /* 멤버안에서 아리아히든 속성만 있는걸 선택! 일부러 span선택안함 */
+  /* margin: 0.5px; */
+}
+.member a{
+  text-transform: uppercase;
+  /* a링크에 직접주면은 상속이 아닌 바로 적용이 됨. */
+  padding: 2px 8px 2px 3px;
+  /* 클릭하는 영역을 넓히기 위해서 마진이 아닌 패딩 값을 줌. */
+
 }
 .visual{
   background-color: lime;

@@ -1,5 +1,7 @@
 @import url(./normalize.css);
 @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
+/* @import url(https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css); */
+@import url(./fontello.css);
 *, *::before, *::after{
   box-sizing: border-box;
 }
@@ -11,7 +13,7 @@ body{
   color:#181818;
   background-color: #fff;
   font-family: 'Spoqa Han Sans';
-  font-weight: 700;
+  font-weight: 400;
 }
 /* 숨김 콘텐츠 */
 .a11y-hidden{
@@ -28,7 +30,7 @@ body{
 a{
   text-decoration: none;
   color: inherit;
-  /* 상속이라는 뜻. 부모의 컬러를 쓸꺼라는 뜻. */
+  /* 상속이라는 뜻. 부모(각 a태그의 부모요소의 컬러값)의 컬러를 쓸꺼라는 뜻.직계부모의 컬러값이 없으면 부모의 부모요소를 탐색. 컬러가 있으면 사용, 아니면 또 상위로 이동 */
 }
 
 /* 레이아웃 */
@@ -94,37 +96,101 @@ a{
   background:#f77b2e linear-gradient(to bottom, #efaf2f 0%,#f77b2e 35%,#f77b2e 70%,#efaf2f 100%);
   padding-left: p;
   list-style: none;
-  margin: 0 0 50px;
+  margin: 0 0 35px;
   padding-left: 225px;
   border-top: 2px solid #000;
   border-radius: 0 0 5px 5px;
+  height: 50px;
 }
-.menu::after{
+/* .menu::after{
   content: "";
   display: block;
   clear: both;
-}
+  .menu에 높이 50px을 줘서 ::after을 삭제.
+} */
 .menu-item{
   float: left;
+  position: relative;
+  /* 각메뉴의 렐러티브를 주면 하위메뉴는 각 아이템의 크기를 벗어날 수 없다. */
 }
 .btn-menu{
   background-color: transparent;
   color: #FFF;
   font-size: 1.6rem;
   font-weight: 700;
+  line-height: 48px;
   border: 0;
   border-left: 2px solid rgba(255,255,255,0.85);
-  padding: 15px 20px;
+  padding: 0px 20px;
   cursor: pointer;
   text-shadow: 1px 0 0 #000, -1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000;
-
+  
+}
+.menu-act .btn-menu{
+  color: #ff0;
+}
+.menu-act .btn-menu::after{
+  content: "";
+  display: block;
+  background-color: #000;
+  height: 2px;
+  /*height는 블록속성이라 박스를 2px로 줘서 얇은 상자를 만듦. 그래서 밑줄처럼 보이는 효과. */
+  /* position: relative;
+  top: 2px;
+  .menu에 높이를 지정해줘서 pos:r와 top:2px 필요없음. */
 }
 .sub-menu{
-  background-color: pink;
   position: absolute;  
-  display: none;
+  /* display: none;
+  각 서브메뉴1~6에 값을줘서 필요없어짐. */
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+  white-space: nowrap;
+  /* 강제개행금지 */
 }
-
+.sub-menu li, .sub-menu6 a{
+  display: inline-block;
+}
+.sub-menu a{
+  padding: 8px 0;
+  margin-right: 1em;
+}
+.sub-menu a::before{
+  content: '\f192';
+  font-family: 'fontello';
+  display: inline-block;
+  width: 1em;
+  margin-right: .2em;
+  margin-left: .2em;
+}
+.sub-menu a:hover::before, .sub-menu a:focus::before{
+  content: '\e800';
+}
+.sub-menu1, .sub-menu2, .sub-menu3{
+  left: 0;
+}
+.sub-menu4, .sub-menu5, .sub-menu6{
+  right: 0;
+}
+.sub-menu1{
+ display: block; 
+}
+.sub-menu2{
+ display: none; 
+}
+.sub-menu3{
+ display: none; 
+}
+.sub-menu4{
+ display: none; 
+}
+.sub-menu5{
+ display: none; 
+}
+.sub-menu6{
+ display: none; 
+}
 .visual{
   background-color: lime;
   height: 120px;

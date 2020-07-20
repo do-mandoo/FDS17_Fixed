@@ -17,7 +17,7 @@ body{
   font-weight: 400;
 }
 /* 숨김 콘텐츠 */
-.a11y-hidden{
+.a11y-hidden, legend{
   /* display: none;
   보조기기에서 접근하지 않음. 없는 개체가 됨. dom tree에서도 인식안함. 쓰면 안됨. */
   position: absolute;
@@ -70,7 +70,7 @@ a{
   margin-bottom: 8px;
   margin-right: -8px;
   font-size: 0;
- text-align: right; 
+  text-align: right; 
 }
 .member li, a{
   display: inline-block;
@@ -265,6 +265,99 @@ a{
   background-color: coral;
   width: 190px;
 }
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+/* 로그인 */
+.login{
+  padding: 10px;
+  background-color: #f77b2e;
+  background-image: radial-gradient(circle at right top, #efaf2f ,#f77b2e);
+  /* 원형그라디언트 */
+  border-radius: 5px;
+  box-shadow: 5px 5px 0 0 #ccc;
+  padding: 10px;
+  /* 배경 핑크색상이 패딩을 주니까 안보이는 이유: h2마진은 투명함.로그인 안쪽으로 마진이 안쪽으로???? 마진이해. */
+} 
+.login-heading{
+  color:#ff0;
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding-left: 10px;
+  /* 고정형은 px단위로 , 반응형은 1em으로. */
+}
+.login-form{
+  background-color: #fff;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  padding: 10px 10px 0 10px;
+}
+.login-form fieldset{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  position: relative;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #aaa;
+}
+.login-form div{
+  margin-bottom: 5px;
+  width: 150px;
+}
+.login-form label{
+  display: inline-block;
+  width: 55px;
+}
+.login-form input{
+  width: 90px;
+  height: 24px;
+  border: 1px solid #aaa;
+  padding: 1px 1px 1px 0.5em;
+}
+.btn-login{
+  width: 50px;
+  height: 52px;
+  border-radius: 3px;
+  border: 0;
+  padding: 5px;
+  color: #FFF;
+  cursor: pointer;
+  background-color: #f77b2e;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.member-only{
+  background-color: #fff;
+  margin: 0;
+  padding: 10px;
+  list-style: none;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px; 
+}
+.member-only li:first-child{
+  float: left;
+}
+.member-only li:last-child{
+  float: right;
+}
+.member-only a{
+  padding-top: 5px;
+  padding-bottom: 5px;
+  /* 겹침. 제자리에서 위아래로. 기존 바탕을 늘리게하지않음. */
+}
+.member-only a::before{
+  content: "\e803";
+  font-family: 'fontello';
+  display: inline-block;
+  margin-right: .2em;
+  color: #f77b2e;
+}
+/* 슬로건 */
 .slogan{
   background-color: orange;
 }

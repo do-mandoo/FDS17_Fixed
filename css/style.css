@@ -21,9 +21,11 @@ body{
   /* display: none;
   보조기기에서 접근하지 않음. 없는 개체가 됨. dom tree에서도 인식안함. 쓰면 안됨. */
   position: absolute;
+  /* 숨기기위해서 absolute를 사용해서 뜨게해서 크기(?)를 잡히지 않게 하는 것. */
   width: 1px;
   height: 1px;
   overflow: hidden;
+  /* 영역(1px씩 지정한)외 부분까지 글자가 넘치면 넘치는 글자를 숨김처리한다. */
   margin: -1px;
   clip-path: polygon(0 0,0 0,0 0);
 }
@@ -278,6 +280,9 @@ a{
   /* 원형그라디언트 */
   border-radius: 5px;
   box-shadow: 5px 5px 0 0 #ccc;
+  /* 박스사이즈에 영향을 주지 않는다. 그래서 넘치는것처럼 보인다. */
+  width: calc(100% - 5px);
+  /* - 5px은 그림자효과 px크기 */
   padding: 10px;
   /* 배경 핑크색상이 패딩을 주니까 안보이는 이유: h2마진은 투명함.로그인 안쪽으로 마진이 안쪽으로???? 마진이해. */
 } 
@@ -357,6 +362,33 @@ a{
   margin-right: .2em;
   color: #f77b2e;
 }
+/* 유효성 검사 배너 링크 */
+.validation-list{
+  background-color: yellow;
+  list-style: none;
+  margin-top: 25px;
+  /* 20px이여야하지만 그림자때문에 5px을 더해서 설정. */
+  margin-bottom: 0;
+  padding-left: 0;
+}
+.validation-list a{
+  display: block;
+  /* 마크업이 a태그라면 display를 block으로 설정먼저 해야한다. */
+  padding: 8px 10px 8px 45px;
+  /* line-height: 30px; */
+  border: 1px solid #aaa;
+  margin-top: 10px;
+  background-color: #ccc;
+  border-radius: 20px;
+  background-image: url(./images/validation_icon.png), linear-gradient(180deg, #ccc, #eee);
+  background-repeat: no-repeat, repeat;
+  background-position: 15px 50%, 0 0;
+}
+.validation-list a:hover{
+  color: #f00;
+}
+
+
 /* 슬로건 */
 .slogan{
   background-color: orange;

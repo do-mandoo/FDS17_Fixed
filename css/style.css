@@ -38,12 +38,15 @@ a{
 
 /* 레이아웃 */
 .container{
-  display: flex;
+  /* display: flex;
   flex-flow: column nowrap;
-  align-items: center;
+  align-items: center; */
+
 }
 .header, .visual, .main, .slogan, .footer{
   width: 940px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* 헤더 */
@@ -51,7 +54,8 @@ a{
   background-color: #FFF;
   border-radius: 0 0 15px 15px;
   /* 레프트탑(left-top)값 중심으로 시계방향으로 흐름. */
-  padding: 0 30px 0 30px;
+  padding: 1px 30px 1px 30px;
+  /* container가 flex를 안줌. header에 auto margin을 썼음. 패딩 위아래를 1px을 주면 마진이 겹치는걸 막기위해 1px라도 준것임.  */
   position: relative;
   /* offset조절가능. relative는 주어진값으로 그대로 읽는다. */
 }
@@ -247,7 +251,8 @@ a{
 
 /* 메인 콘텐츠 */
 .main{
-  background-color: blue;
+  background-color: #fff;
+  border-radius: 15px 15px 0 0;
   min-height: 450px;
   padding: 30px;
   display: flex;
@@ -256,15 +261,12 @@ a{
   align-items: flex-start;
 }
 .group1{
-  background-color: pink;
   width: 250px;
 }
 .group2{
-  background-color: lightgreen;
   width: 380px;
 }
 .group3{
-  background-color: coral;
   width: 190px;
 }
 .clearfix::after {
@@ -364,17 +366,18 @@ a{
 }
 /* 유효성 검사 배너 링크 */
 .validation-list{
-  background-color: yellow;
   list-style: none;
   margin-top: 25px;
   /* 20px이여야하지만 그림자때문에 5px을 더해서 설정. */
   margin-bottom: 0;
   padding-left: 0;
 }
-.validation-list a{
+.validation-list li{
   display: block;
   /* 마크업이 a태그라면 display를 block으로 설정먼저 해야한다. */
-  padding: 8px 10px 8px 45px;
+  /* padding: 8px 10px 8px 45px; */
+  text-indent: 30px;
+  padding: 8px 0;
   /* line-height: 30px; */
   border: 1px solid #aaa;
   margin-top: 10px;
@@ -387,7 +390,54 @@ a{
 .validation-list a:hover{
   color: #f00;
 }
+/* 웹 관련 용어 */
+.term{
+  border: 1px solid #aaa;
+  background: #ccc linear-gradient(180deg, #ccc, #eee);
+  border-radius: 5px;
+  padding: 15px;
+  margin-top: 20px;
+}
+.term-heading{
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+.term-list{
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+.term-list > div{
+  margin-top: 10px;
+}
+.term-list > div::after{
+  content: "";
+  display: block;
+  clear: both;
+}
+.term-list-subject, .term-list-brief{
+  width: 145px;
+  float: right;
 
+}
+.term-list-subject{
+  color: #296897;
+}
+dd{margin-left: 0;}
+.term-list-thumbnail{
+  /* margin-left: 0; */
+  float: left;
+}
+.term-list-brief{
+  margin-left: 0;
+  margin: 5px;
+}
+.even .term-list-subject, .even .term-list-brief{
+  float: left;
+}
+.even .term-list-thumbnail{
+  float: right;
+}
 
 /* 슬로건 */
 .slogan{

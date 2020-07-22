@@ -69,7 +69,6 @@ a{
 
 /* 멤버링크 */
 .member{
-  
   list-style: none;
   padding-left: 0;
   margin-top: 8px;
@@ -486,6 +485,31 @@ dd{margin-left: 0;}
   height: 24px;
   padding: 0 10px;
 }
+/* 공지사항 및 자료실 */
+.board{
+  background-color: skyblue;
+  
+}
+.notice{
+  background-color: yellowgreen;
+}
+.notice-heading{
+  background-color: red;
+}
+.notice-list, .pds-list{
+  background-color: orange;
+  list-style: none;
+  padding: 0;
+}
+.notice-list li>a{
+  width: 300px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.notice-list li>time{
+  float:right;  
+}
+
 
 
 /* 슬로건 */

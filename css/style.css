@@ -121,6 +121,7 @@ a{
 }
 .btn-menu{
   background-color: transparent;
+  /* 버튼요소는 자체적으로 갖고있는 배경색이 있어서 내가 설정한 그라데이션 컬러를 입히기위해 버튼기본배경색을 투명으로 설정. */
   color: #FFF;
   font-size: 1.6rem;
   font-weight: 700;
@@ -276,7 +277,6 @@ a{
 }
 /* 로그인 */
 .login{
-  padding: 10px;
   background-color: #f77b2e;
   background-image: radial-gradient(circle at right top, #efaf2f ,#f77b2e);
   /* 원형그라디언트 */
@@ -438,6 +438,55 @@ dd{margin-left: 0;}
 .even .term-list-thumbnail{
   float: right;
 }
+/* 검색 폼 */
+.search-form{
+  border: 1px solid #aaa;
+  border-bottom-color:#fff;
+  border-radius: 15px 15px 0 0;
+  padding: 15px 25px 10px 25px;
+  background: #ccc linear-gradient(180deg, #ccc, #FFF);
+}
+.search-form fieldset{
+  border: 0;
+  padding: 0;
+  margin: 0;
+  border-bottom: 0;
+}
+.search-form div[role="group"]{
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+}
+.search-form label, .btn-search{
+  white-space: nowrap;
+}
+.search-form label::before{
+  content: "\e802";
+  font-family: 'fontello';
+  display: inline-block;
+  margin-right: .2em;
+  color: #000
+}
+.search-form input[type="search"]{
+  border-radius: 3px;
+  border: 1px solid #aaa;
+  padding: 1px 1px 1px 5px;
+  height: 24px;
+  width: 200px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.btn-search{
+  background-color: #222;
+  color: #fff;
+  border: 1px solid #aaa;
+  border-radius: 2px;
+  font-size: 1.3rem;
+  height: 24px;
+  padding: 0 10px;
+}
+
 
 /* 슬로건 */
 .slogan{

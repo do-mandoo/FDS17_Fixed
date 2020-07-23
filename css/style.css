@@ -99,7 +99,7 @@ a{
 /* 메인메뉴 */
 .menu{
   background:#f77b2e linear-gradient(to bottom, #efaf2f 0%,#f77b2e 35%,#f77b2e 70%,#efaf2f 100%);
-  padding-left: p;
+  padding-left: 0;
   list-style: none;
   margin: 0 0 35px;
   padding-left: 225px;
@@ -132,19 +132,6 @@ a{
   text-shadow: 1px 0 0 #000, -1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000;
   
 }
-.menu-act .btn-menu{
-  color: #ff0;
-}
-.menu-act .btn-menu::after{
-  content: "";
-  display: block;
-  background-color: #000;
-  height: 2px;
-  /*height는 블록속성이라 박스를 2px로 줘서 얇은 상자를 만듦. 그래서 밑줄처럼 보이는 효과. */
-  /* position: relative;
-  top: 2px;
-  .menu에 높이를 지정해줘서 pos:r와 top:2px 필요없음. */
-}
 .sub-menu{
   position: absolute;  
   /* display: none;
@@ -154,6 +141,19 @@ a{
   list-style: none;
   white-space: nowrap;
   /* 강제개행금지 */
+  display: none;
+}
+.menu-act .sub-menu{
+  display: block;
+}
+.menu-act .btn-menu {
+  color: #ff0;
+}
+.menu-act .btn-menu::after {
+  content: "";
+  display: block;
+  background-color: #000;
+  height: 2px;
 }
 .sub-menu li, .sub-menu6 a{
   display: inline-block;
@@ -179,7 +179,7 @@ a{
 .sub-menu4, .sub-menu5, .sub-menu6{
   right: 0;
 }
-.sub-menu1{
+/* .sub-menu1{
  display: block; 
 }
 .sub-menu2{
@@ -196,7 +196,7 @@ a{
 }
 .sub-menu6{
  display: none; 
-}
+} */
 /* 비주얼 */
 @keyframes textAni{
   0%{
@@ -487,27 +487,88 @@ dd{margin-left: 0;}
 }
 /* 공지사항 및 자료실 */
 .board{
-  background-color: skyblue;
-  
+  margin-top: 20px;
+  position: relative;
+  padding-top: 45px;
 }
-.notice{
-  background-color: yellowgreen;
+.notice-heading, .pds-heading{
+  float: left;
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 400;
+  /* 위의 세줄 .h2번을 썼기때문에 필요한 기본으로 돌려주는 코드. */
+  position: absolute;
+  top: 0;
 }
 .notice-heading{
-  background-color: red;
+  left: 0;
+}
+.pds-heading{
+  left: 73px;
+}
+.tab{
+  display: block;
+  color: #666;
+  border: 1px solid #aaa;
+  border-radius: 5px 5px 0 0;
+  padding: 5px 10px;
+  background: #ccc linear-gradient(180deg, #ccc, #eee);
+}
+.tab-act .tab{
+  color: #f77b2e;
+  border-color:#f77b2e #f77b2e #fff #f77b2e;
+  background: #fff;
+}
+.notice-list, .pds-list, .notice-more, .pds-more{
+  display: none;
+}
+.tab-act .notice-list, .tab-act .pds-list, .tab-act .notice-more, .tab-act .pds-more{
+  display:block;
 }
 .notice-list, .pds-list{
-  background-color: orange;
   list-style: none;
-  padding: 0;
+  margin: 0;
+  padding-left: 0;
+  
+  min-height: 130px;  
 }
-.notice-list li>a{
+
+.notice-list li, .pds-list li{
+  margin-bottom: 10px;
+}
+.notice-list li::after, .pds-list li::after{
+  content: "";
+  display: block;
+  clear: both;
+  /* 각 리스트에 클리어픽스 넣어도 됨. */
+}
+.notice-list a, .pds-list a{
+  float: left;
   width: 300px;
-  white-space: nowrap;
+  text-overflow: ellipsis;
   overflow: hidden;
+  white-space: nowrap;
 }
-.notice-list li>time{
-  float:right;  
+.notice-list a::before, .pds-list a::before{
+  content: "\f192";
+  font-family: 'fontello';
+  display: inline-block;
+  margin-right: .2em;
+}
+.notice-list time, .pds-list time{
+  float: right;
+}
+.notice-more, .pds-more{
+  /* background-color: lime; */
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  /* 지정한 패딩크기만큼 음수값을 줘서 더보기링크를 위치변화 전 같은 착각을 줌. */
+  padding: 8px;
+}
+.icon-plus::before{
+  /* content=""가 없는 이유는 이미 html작성때 아이콘을 지정했기떄문에. */
+  color: hsla(110, 70%, 50%, 1);
 }
 
 

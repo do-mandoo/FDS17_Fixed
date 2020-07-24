@@ -28,6 +28,8 @@ body{
   /* 영역(1px씩 지정한)외 부분까지 글자가 넘치면 넘치는 글자를 숨김처리한다. */
   margin: -1px;
   clip-path: polygon(0 0,0 0,0 0);
+  clip: rect(0 0 0 0);
+  clip: rect(0,0,0,0);
 }
 /* 링크 스타일 */
 a{
@@ -744,6 +746,7 @@ dd{margin-left: 0;}
   padding: 0;
   margin: 0;
   cursor: pointer;
+  vertical-align: top;
 }
 .btn-next{
   background-position: -35px 0;

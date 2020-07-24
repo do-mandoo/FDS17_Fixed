@@ -623,6 +623,134 @@ dd{margin-left: 0;}
   padding: 8px;
 }
 
+/* 신규 이벤트 내가 짠 코드
+.gradient-box{
+  background-color: silver;
+  padding: 15px;
+  border: 1px solid #eee;
+  border-radius: 10px;
+}
+.event{
+  background-color: yellowgreen;
+  position: relative;
+}
+.event-heading{
+  background-color: skyblue;
+  font-size: 1.6rem;
+  margin: 0;
+  padding: 5px 0 5px 0;
+}
+.event-heading span{
+  color: red;
+  padding-left: 5px;
+}
+#eventDetail{
+  background-color: yellow;
+}
+.event-thumbnail{
+  border: 1px solid #ccc;
+  box-shadow: #aaa 8px 8px 5px 0;
+}
+.event-brief{
+  
+}
+.btn-wrap{
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.btn-prev{
+  background-image: url(./images/back_forward.png);
+  background-repeat: no-repeat;
+  width: 19px;
+  height: 18px;
+  border: 0;
+  padding: 0;
+}
+.btn-next{
+  background-image: url(./images/back_forward.png);
+  background-repeat: repeat;
+  width: 19px;
+  height: 18px;
+} */
+
+
+/* 신규 이벤트 및 관련 사이트 */
+.gradient-box{
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  padding: 10px;
+  background: #ccc linear-gradient(180deg, #ccc, #eee);
+}
+/* 신규 이벤트 */
+
+/*
+  처음 일반 방법
+ .btn-wrap{
+  background-color: yellow;
+  height: 18px;
+  top: 0;
+  right: 0;
+}
+.btn-prev, .btn-next{
+  background: #ccc url(./images/back_forward.png) no-repeat;
+  속기법이 아닌, 개별속성으로 쓰는게 안전. 속기법으로 쓰려면 btn-wrap의 자식요소들을 선택해야한다.
+  border: 0;
+  width: 19px;
+  height: 100%;
+  부모의 btn-wrap크기만큼 가져간다.
+  overflow: hidden;
+  padding: 18px 0 0 0;
+  cursor: pointer;
+}
+.btn-next{
+  background-position: -35px 0;
+} */
+.event{
+  background-color: yellow;
+  border-bottom: 1px solid #aaa;
+  position: relative;
+}
+.event-heading{
+  font-size: 1.6rem;
+  margin: 0;
+}
+.event-heading span{
+  color: #f77b2e;
+}
+.event-thumbnail, .event-brief{
+  margin: 10px 0;
+}
+.event-thumbnail img{
+  border: 1px solid #aaa;
+  box-shadow: 5px 5px 0 0 #999;
+}
+.event-brief em{
+  font-style: normal;
+}
+.btn-wrap{
+  background-color: pink;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.btn-prev, .btn-next{
+  background-color: #ccc;
+  background-image: url(./images/back_forward.png);
+  background-repeat: no-repeat;
+  width: 19px;
+  height: 18px;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+.btn-next{
+  background-position: -35px 0;
+}
+
+
+
 
 /* 슬로건 */
 .slogan{

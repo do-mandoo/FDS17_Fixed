@@ -451,7 +451,6 @@ dd{margin-left: 0;}
   border: 0;
   padding: 0;
   margin: 0;
-  border-bottom: 0;
 }
 .search-form div[role="group"]{
   display: flex;
@@ -888,8 +887,56 @@ dd{margin-left: 0;}
 
 /* 슬로건 */
 .slogan{
-  background-color: orange;
+  position: relative;
+  padding: 15px 80px 15px 170px;
 }
+.slogan-heading{
+  margin: 0;
+  width: 110px;
+  height: 83px;
+  position: absolute;
+  left: 35px;
+  bottom: -25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+.slogan-heading::after{
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: url(./images/coffee.png) no-repeat 0 0 scroll;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.slogan-brief{
+  color: #a09784;
+  font-size: 1.3rem;
+}
+.slogan-brief q{
+  font-weight: 700;
+}
+.slogan-brief q::before{
+  /* vertical-align: bottom; */
+  font-size: 3rem;
+  position: relative;
+  top: 10px;
+  margin-right: 5px;
+}
+.slogan-brief q::after{
+  content: none;
+}
+.slogan-brief span{
+}
+
+
+
+
+
+
 .footer-bg{
   background-color: purple;
   width: 100%;

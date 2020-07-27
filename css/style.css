@@ -920,9 +920,9 @@ dd{margin-left: 0;}
   font-weight: 700;
 }
 .slogan-brief q::before{
-  /* vertical-align: bottom; */
+  vertical-align: middle;
   font-size: 3rem;
-  position: relative;
+  /* position: relative; */
   top: 10px;
   margin-right: 5px;
 }
